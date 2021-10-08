@@ -6,7 +6,7 @@ const Option = ({ options, handleOption, index, addOption }) => {
   useEffect(() => {
     focusRef.current?.focus();
   }, []);
-
+  
   return (
     <div>
       <input
@@ -20,7 +20,7 @@ const Option = ({ options, handleOption, index, addOption }) => {
         className="bg-transparent p-2 w-full outline-none border-b border-gray-500"
         onKeyDown={(e) => {
           if (
-            (e.code === "Enter" || e.code === "Tab") &&
+            (e.code === "Enter" || e.code === "Tab" || e.keyCode === 13) &&
             index === options.length - 1 &&
             options[index].option
           ) {
